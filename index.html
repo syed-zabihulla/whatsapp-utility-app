@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Direct Message Utility</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f9; }
-        .card { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        input, textarea, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
-        button { background-color: #25D366; color: white; font-weight: bold; border: none; cursor: pointer; }
-        button:hover { background-color: #1ebd56; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Direct Message Utility</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f9; }
+    .card { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    input, textarea, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+    button { background-color: #25D366; color: white; font-weight: bold; border: none; cursor: pointer; }
+    button:hover { background-color: #1ebd56; }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <h2>WhatsApp डायरेक्ट मैसेज</h2>
-        <p>बिना नंबर सेव किए सीधा मैसेज या लोकेशन भेजें</p>
-        <input type="text" id="phone" placeholder="देश का कोड + नंबर (उदा. 919876543210)">
-        <textarea id="message" placeholder="अपना मैसेज लिखें (ऐच्छिक)..."></textarea>
-        <button onclick="sendWhatsApp()">WhatsApp पर भेजें</button>
-    </div>
+  <div class="card">
+    <h2>WhatsApp Direct Message</h2>
+    <p>Send direct message or location without saving number</p>
+    
+    <input type="text" id="phone" placeholder="Country code + number (ex. 919876543210)">
+    <textarea id="message" placeholder="Type your message (optional)..."></textarea>
+    <button onclick="sendWhatsApp()">Send on WhatsApp</button>
+  </div>
 
-    <script>
-        function sendWhatsApp() {
-            var phone = document.getElementById('phone').value.trim();
-            var message = encodeURIComponent(document.getElementById('message').value.trim());
-            if (phone === "") {
-                alert("कृपया मोबाइल नंबर दर्ज करें!");
-                return;
-            }
-            var url = "https://wa.me/" + phone + "?text=" + message;
-            window.open(url, '_blank');
-        }
-    </script>
+  <script>
+    function sendWhatsApp() {
+      var phone = document.getElementById('phone').value.trim();
+      var message = encodeURIComponent(document.getElementById('message').value.trim());
+      if (phone === "") {
+        alert("Please enter a mobile number!");
+        return;
+      }
+      var url = "https://wa.me/" + phone + "?text=" + message;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
-      </html>
-      
+</html>
